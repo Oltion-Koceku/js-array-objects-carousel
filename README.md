@@ -30,3 +30,4 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 4. bonus 3
   - al click del bottone start con set interval partirà il loop
   - al click del bottone stop si fermerà il loop con clear interval
+  - al click del bottone inversione si invertirà il loop del carosello grazie ad un valore booleano 

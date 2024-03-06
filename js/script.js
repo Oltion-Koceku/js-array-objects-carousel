@@ -36,7 +36,7 @@ const colonna0 = document.querySelector(".colonna-0")
 const buttonStart = document.querySelector(".start");
 const buttonStop = document.querySelector(".stop");
 const buttonInversione = document.querySelector(".inversione");
-
+let inversione = true;
 imgs.forEach((imgUrl) => {
   colonna1.innerHTML += `
   <img src="${imgUrl.img}" alt="" class="img-ol d-none">
@@ -95,7 +95,11 @@ buttonGiu.addEventListener("click", function(){
 // timeSec = setInterval(scroll, 3000);
 
 buttonInversione.addEventListener("click", function(){
-  setInterval(scroll, 3000)
+  if (inversione === false) {
+    inversione = true
+  }else{
+    inversione = false
+  }
 })
 
 buttonStop.addEventListener("click", function(){
@@ -103,37 +107,27 @@ buttonStop.addEventListener("click", function(){
 })
 
 buttonStart.addEventListener("click", function(){
-   timeSec = setInterval(scroll, 3000);
+   timeSec = setInterval(scroll, 1000);
 })
 
-// colonnine1.addEventListener("click", active(0))
-// colonnine2.addEventListener("click", active(1))
-// colonnine3.addEventListener("click", active(2))
-// colonnine4.addEventListener("click", active(3))
-// colonnine5.addEventListener("click", active(4))
 
-// Function
-// function active(numero){
-//   imgSmall[contatore].classList.add("trasparente");
-//   descrizioneTutto[contatore].classList.add("d-none")
-//   imgAll[contatore].classList.add("d-none");
-//   imgSmall[contatore].classList.remove("bordo-bianco");
-//   contatore = numero
-//   descrizioneTutto[contatore].classList.remove("d-none")
-//   imgSmall[contatore].classList.remove("trasparente");
-//   imgSmall[contatore].classList.add("bordo-bianco");
-//   imgAll[contatore].classList.remove("d-none");
-// }
-
+// function
 function scroll(){
   descrizioneTutto[contatore].classList.add("d-none")
   imgAll[contatore].classList.add("d-none");
   imgSmall[contatore].classList.remove("bordo-bianco");
   imgSmall[contatore].classList.add("trasparente");
-  contatore++;
-  if(contatore >= imgs.length){
-  contatore = 0;
-  } 
+  if (inversione === false) {
+    contatore++;
+    if(contatore >= imgs.length){
+    contatore = 0;
+    } 
+  }else{
+    contatore--;
+    if(contatore < 0){
+      contatore = 4;
+      } 
+  }
   descrizioneTutto[contatore].classList.remove("d-none")
   imgSmall[contatore].classList.remove("trasparente");
   imgSmall[contatore].classList.add("bordo-bianco");
