@@ -53,7 +53,11 @@ width: 200px;
   filter: brightness(0.4);
 }
 
-.colonnine{
+.colonnine-1,
+.colonnine-2,
+.colonnine-3,
+.colonnine-4,
+.colonnine-5{
   height: calc(350px / 5);
 }
 .bordo-bianco{

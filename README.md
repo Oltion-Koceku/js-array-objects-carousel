@@ -25,3 +25,8 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 ## Svolgimento:
 1. Sostituisco il ciclo for normale con un FORECH 
 2. aggiungo e tolgo il d-none dell'titolo e descrizione
+3. Bonus 1
+  - al click della thumbnails dovra comparire quell immagine usando il contatore
+4. bonus 3
+  - al click del bottone start con set interval partirà il loop
+  - al click del bottone stop si fermerà il loop con clear interval

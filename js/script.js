@@ -33,7 +33,9 @@ const colonna2 = document.querySelector(".colonna-2");
 const buttonSu = document.querySelector(".button-su");
 const buttonGiu = document.querySelector(".button-giu");
 const colonna0 = document.querySelector(".colonna-0")
-// const descrizione = document.querySelector(".descrizione")
+const buttonStart = document.querySelector(".start");
+const buttonStop = document.querySelector(".stop");
+const buttonInversione = document.querySelector(".inversione");
 
 imgs.forEach((imgUrl) => {
   colonna1.innerHTML += `
@@ -90,16 +92,38 @@ buttonGiu.addEventListener("click", function(){
   
 });
 
-timeSec = setInterval(scroll, 3000);
+// timeSec = setInterval(scroll, 3000);
 
-colonna0.addEventListener("mouseover", function(){
+buttonInversione.addEventListener("click", function(){
+  setInterval(scroll, 3000)
+})
+
+buttonStop.addEventListener("click", function(){
   clearInterval(timeSec);
 })
 
-colonna0.addEventListener("mouseleave", function(){
+buttonStart.addEventListener("click", function(){
    timeSec = setInterval(scroll, 3000);
 })
+
+// colonnine1.addEventListener("click", active(0))
+// colonnine2.addEventListener("click", active(1))
+// colonnine3.addEventListener("click", active(2))
+// colonnine4.addEventListener("click", active(3))
+// colonnine5.addEventListener("click", active(4))
+
 // Function
+// function active(numero){
+//   imgSmall[contatore].classList.add("trasparente");
+//   descrizioneTutto[contatore].classList.add("d-none")
+//   imgAll[contatore].classList.add("d-none");
+//   imgSmall[contatore].classList.remove("bordo-bianco");
+//   contatore = numero
+//   descrizioneTutto[contatore].classList.remove("d-none")
+//   imgSmall[contatore].classList.remove("trasparente");
+//   imgSmall[contatore].classList.add("bordo-bianco");
+//   imgAll[contatore].classList.remove("d-none");
+// }
 
 function scroll(){
   descrizioneTutto[contatore].classList.add("d-none")
