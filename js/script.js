@@ -62,17 +62,15 @@ buttonSu.addEventListener("click", function(){
   imgSmall[contatore].classList.add("trasparente");
   
   contatore--;
+  if(contatore < 0){
+    contatore = 4
+  }
   descrizioneTutto[contatore].classList.remove("d-none")
   imgSmall[contatore].classList.remove("trasparente");
   imgSmall[contatore].classList.add("bordo-bianco");
   imgAll[contatore].classList.remove("d-none");
   
   
-  if(contatore === 0){
-    buttonSu.classList.add("d-none");
-  }else if(contatore === imgs.length - 2){
-    buttonGiu.classList.remove("d-none");
-  }
 });
 
 buttonGiu.addEventListener("click", function(){
@@ -81,16 +79,14 @@ buttonGiu.addEventListener("click", function(){
   imgSmall[contatore].classList.remove("bordo-bianco");
   imgSmall[contatore].classList.add("trasparente")
   contatore++;
+  if(contatore > 4){
+    contatore = 0
+  }
   descrizioneTutto[contatore].classList.remove("d-none")
   imgSmall[contatore].classList.remove("trasparente")
   imgAll[contatore].classList.remove("d-none")
   imgSmall[contatore].classList.add("bordo-bianco")
   
-  if(contatore === imgs.length - 1){
-    buttonGiu.classList.add("d-none");
-  }else if(contatore === 1){
-    buttonSu.classList.remove("d-none");
-  };
   
 });
 
